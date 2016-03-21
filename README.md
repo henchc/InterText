@@ -1,0 +1,2 @@
+# InterText
+Discovers intertextualities
