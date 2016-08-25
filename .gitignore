@@ -1,12 +1,10 @@
 
 OLD/
 
+texts/
+
 *.pyc
 
 *.txt
 
-intertext-gui.py
-
 *.html
-
-InterText2mp.py
