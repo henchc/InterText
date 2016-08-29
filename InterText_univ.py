@@ -9,11 +9,7 @@ Author = Christopher Hench
 License = MIT
 '''
 
-import re
-from string import punctuation
-from collections import Counter
 from fuzzywuzzy import fuzz
-import operator
 from collections import Counter
 import pyprind
 import sys
@@ -23,8 +19,6 @@ import sys
 def scoreWord(word, counter_dict):
     ranks = [x[0] for x in counter_dict.most_common()]
     singles = len([x for x in counter_dict.most_common() if x[1] == 1])
-    unique_words = len(ranks)
-    tail_singles = unique_words - singles
 
     score = 0
 
@@ -53,7 +47,7 @@ def compareStrings(strings):
 
     leven1 = fuzz.ratio(strings[0], strings[1])
 
-    #leven1 = Levenshtein.ratio(strings[0], strings[1])
+    # leven1 = Levenshtein.ratio(strings[0], strings[1])
     return (strings[0], strings[1], leven1)
 
 
@@ -233,7 +227,5 @@ if __name__ == "__main__":
     print(str(len(sifted_matches)) + " matches found:")
     for i, m in enumerate(sifted_matches):
         print(i + 1, m)
-
-    # write_to_html(collected_matches, clean_text1, clean_text2, f1name, f2name)
 
     print()
